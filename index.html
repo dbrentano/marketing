@@ -169,15 +169,28 @@ header.nav.hide-header {
 
 /* Default desktop layout stays identical */
 @media (max-width: 900px) {
-  /* show hamburger, hide inline nav */
-  .menu-toggle { display: flex; }
+  /* keep header items inline */
+  .header-inner {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    padding: 0 4%;
+  }
+
+  /* show hamburger icon */
+  .menu-toggle {
+    display: flex;
+  }
+
+  /* hide nav links by default on mobile */
   .nav-links {
     position: absolute;
-    top: 90px; /* directly below header */
+    top: 80px; /* directly under header */
     left: 0;
     right: 0;
-    background: rgba(15,18,32,0.98);
-    border-top: 1px solid rgba(255,255,255,0.08);
+    background: rgba(15, 18, 32, 0.98);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -188,6 +201,7 @@ header.nav.hide-header {
     transform: translateY(-10px);
     transition: all 0.3s ease;
   }
+
   .nav-links.show {
     opacity: 1;
     pointer-events: auto;
@@ -196,9 +210,10 @@ header.nav.hide-header {
 
   .nav-links a {
     font-size: 1.1rem;
-    width: 100%;
     text-align: center;
+    width: 100%;
   }
+
   .nav-links .btn {
     width: 80%;
     text-align: center;
