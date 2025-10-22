@@ -62,6 +62,8 @@
             backdrop-filter: blur(6px);
             border-bottom: 1px solid rgba(255, 255, 255, 0.08);
             transition: transform 0.35s ease, opacity 0.25s ease;
+            overflow: visible; /* allows logo to overlap bottom border */
+            height: 230px; /* taller to fit logo overlap */
         }
 
         /* Hidden state */
@@ -71,36 +73,24 @@
         }
 
         .header-inner {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            height: 90px;
+            position: relative;
+            display: block;
+            height: 100%;
             max-width: var(--max);
             margin: 0 auto;
             padding: 0 3%;
         }
 
-        .brand {
-            display: flex;
-            align-items: center;
-            flex-shrink: 0;
-        }
-
-        .brand img.logo-img {
-            height: 125px;
-            width: auto;
-            display: block;
-            transition: transform 0.25s ease;
-        }
-
-        .brand img.logo-img:hover {
-            transform: scale(1.04);
-        }
-
+        /* nav links above logo */
         nav {
+            position: absolute;
+            top: 40px;
+            left: 50%;
+            transform: translateX(-50%);
             display: flex;
             align-items: center;
-            gap: 28px;
+            justify-content: center;
+            gap: 50px;
         }
 
         nav a {
@@ -125,6 +115,28 @@
 
         nav .btn:hover {
             filter: brightness(1.1);
+        }
+
+        /* logo centered and overlapping bottom border */
+        .brand {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: -95px; /* adjust overlap depth */
+            z-index: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .brand img.logo-img {
+            height: 275px;
+            width: auto;
+            display: block;
+            transition: transform 0.25s ease;
+        }
+
+        .brand img.logo-img:hover {
+            transform: scale(1.04);
         }
 
         /* --- MOBILE DROPDOWN --- */
@@ -305,98 +317,109 @@
             font-size: .95rem;
         }
 
+
         /* ---------------- RESPONSIVE ---------------- */
-@media (max-width: 900px) {
-    :root {
-        --mobile-header-h: 140px;
-    }
+        @media (max-width: 900px) {
+            :root {
+                --mobile-header-h: 140px;
+            }
 
-    /* make the actual header this tall (moves the bottom border too) */
-    header.nav {
-        height: var(--mobile-header-h);
-        /* NEW: prevent fixed children from being clipped by header on mobile */
-        backdrop-filter: none;
-        -webkit-backdrop-filter: none;
-        overflow: visible;
-    }
+            /* make the actual header this tall (moves the bottom border too) */
+            header.nav {
+                height: var(--mobile-header-h);
+                /* NEW: prevent fixed children from being clipped by header on mobile */
+                backdrop-filter: none;
+                -webkit-backdrop-filter: none;
+                overflow: visible;
+            }
 
-    nav {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 16px;
-    }
+            nav {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 16px;
+            }
 
-    .brand img.logo-img {
-        height: 175px;
-        margin-top: 60px;
-    }
+            .brand img.logo-img {
+                height: 175px;
+                margin-top: 60px;
+            }
 
-    .grid {
-        grid-template-columns: 1fr;
-    }
+            .grid {
+                grid-template-columns: 1fr;
+            }
 
-    .hero {
-        padding-top: 64px;
-    }
+            .hero {
+                padding-top: 64px;
+            }
 
-    /* keep header items inline */
-    .header-inner {
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        height: 80px;
-        padding: 0 4%;
-    }
+            /* keep header items inline */
+            .header-inner {
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                height: 80px;
+                padding: 0 4%;
+            }
 
-    /* show hamburger icon */
-    .menu-toggle {
-        /* CHANGED: fixed so it sits above the fullscreen overlay */
-        position: fixed;
-        right: 50px;
-        top: 25px;
-        transform: none;
-        display: flex;
-        z-index: 100;
-    }
+            /* show hamburger icon */
+            .menu-toggle {
+                /* CHANGED: fixed so it sits above the fullscreen overlay */
+                position: fixed;
+                right: 50px;
+                top: 25px;
+                transform: none;
+                display: flex;
+                z-index: 100;
+            }
 
-    /* FULLSCREEN nav links */
-  .nav-links {
-    position: fixed;
-    inset: 0;
-    height: 100vh;
-    background: rgba(15, 18, 32, 0.98);
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start; /* move links toward the top */
-    align-items: center;
-    gap: 28px;
-    padding-top: 140px; /* adjust spacing from the very top */
-    opacity: 0;
-    pointer-events: none;
-    transform: translateY(-10px);
-    transition: all 0.3s ease;
-    z-index: 99;
-  }
+            /* FULLSCREEN nav links */
+            .nav-links {
+                position: fixed;
+                inset: 0;
+                height: 100vh;
+                background: rgba(15, 18, 32, 0.98);
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                /* move links toward the top */
+                align-items: center;
+                gap: 28px;
+                padding-top: 140px;
+                /* adjust spacing from the very top */
+                opacity: 0;
+                pointer-events: none;
+                transform: translateY(-10px);
+                transition: all 0.3s ease;
+                z-index: 99;
+            }
 
-  .nav-links.show {
-    opacity: 1;
-    pointer-events: auto;
-    transform: translateY(0);
-  }
+            .nav-links.show {
+                opacity: 1;
+                pointer-events: auto;
+                transform: translateY(0);
+            }
 
-    .nav-links a {
-        font-size: 1.1rem;
-        text-align: center;
-        width: 100%;
-    }
+            .nav-links a {
+                font-size: 1.1rem;
+                text-align: center;
+                width: 100%;
+            }
 
-    .nav-links .btn {
-        width: 80%;
-        text-align: center;
-    }
-}
+            .nav-links .btn {
+                width: 80%;
+                text-align: center;
+            }
 
-
+            .brand {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: -120px; /* adjust overlap depth */
+            z-index: 1;
+            display: flex;
+            justify-content: center;
+            }
+        }
     </style>
 </head>
 
