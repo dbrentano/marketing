@@ -307,6 +307,15 @@
 
         /* ---------------- RESPONSIVE ---------------- */
         @media (max-width: 900px) {
+            :root {
+                --mobile-header-h: 140px;
+            }
+
+            /* make the actual header this tall (moves the bottom border too) */
+            header.nav {
+                height: var(--mobile-header-h);
+            }
+
             nav {
                 flex-wrap: wrap;
                 justify-content: center;
@@ -315,7 +324,7 @@
 
             .brand img.logo-img {
                 height: 175px;
-                margin-top: 40px;
+                margin-top: 60px;
             }
 
             .grid {
@@ -326,7 +335,7 @@
                 padding-top: 64px;
             }
 
-                        /* keep header items inline */
+            /* keep header items inline */
             .header-inner {
                 flex-direction: row;
                 justify-content: center;
@@ -335,52 +344,53 @@
                 padding: 0 4%;
             }
 
-                        /* show hamburger icon */
+            /* show hamburger icon */
             .menu-toggle {
-    position: absolute;
-    right: 50px;     /* move closer to the right edge (try 5px if you want tighter) */
-    top: 50%;
-    transform: translateY(-50%);
-    display: flex;
-  }
-            }
-
-            /* hide nav links by default on mobile */
-            .nav-links {
                 position: absolute;
-                top: 80px;
-                /* directly under header */
-                left: 0;
-                right: 0;
-                background: rgba(15, 18, 32, 0.98);
-                border-top: 1px solid rgba(255, 255, 255, 0.08);
+                right: 50px;
+                /* move closer to the right edge (try 5px if you want tighter) */
+                top: 50%;
+                transform: translateY(-50%);
                 display: flex;
-                flex-direction: column;
-                align-items: center;
-                gap: 20px;
-                padding: 20px 0;
-                opacity: 0;
-                pointer-events: none;
-                transform: translateY(-10px);
-                transition: all 0.3s ease;
             }
+        }
 
-            .nav-links.show {
-                opacity: 1;
-                pointer-events: auto;
-                transform: translateY(0);
-            }
+        /* hide nav links by default on mobile */
+        .nav-links {
+            position: absolute;
+            top: 80px;
+            /* directly under header */
+            left: 0;
+            right: 0;
+            background: rgba(15, 18, 32, 0.98);
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            padding: 20px 0;
+            opacity: 0;
+            pointer-events: none;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+        }
 
-            .nav-links a {
-                font-size: 1.1rem;
-                text-align: center;
-                width: 100%;
-            }
+        .nav-links.show {
+            opacity: 1;
+            pointer-events: auto;
+            transform: translateY(0);
+        }
 
-            .nav-links .btn {
-                width: 80%;
-                text-align: center;
-            }
+        .nav-links a {
+            font-size: 1.1rem;
+            text-align: center;
+            width: 100%;
+        }
+
+        .nav-links .btn {
+            width: 80%;
+            text-align: center;
+        }
         }
     </style>
 </head>
