@@ -38,7 +38,7 @@
             position: sticky;
             top: 0;
             z-index: 50;
-            background: rgba(15, 18, 32, 0.95);
+            background: var(--paper);
             backdrop-filter: blur(6px);
             border-bottom: 1px solid rgba(255, 255, 255, 0.08);
             transition: transform 0.35s ease, opacity 0.25s ease;
@@ -292,7 +292,6 @@
             margin-top: 3px;
         }
 
-        /* ---------------- FOOTER ---------------- */
         /* ---------------- FOOTER ---------------- */
         .footer {
             background: var(--paper);
