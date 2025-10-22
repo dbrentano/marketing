@@ -209,6 +209,20 @@
             color: #fff;
         }
 
+        form .btn {
+            display: block;
+                /* ensures it takes full width context for centering */
+                margin: 24px auto 0;
+                /* centers horizontally */
+                padding: 14px 50px;
+                /* bigger button */
+                font-size: 1.1rem;
+                /* slightly larger text */
+                border-radius: 12px;
+                /* keep consistent with rest of design */
+                text-align: center;
+        }
+
         .subline {
             margin-top: 12px;
             color: var(--muted);
