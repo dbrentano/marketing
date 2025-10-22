@@ -248,7 +248,7 @@
 
         /* ---------------- ABOUT ---------------- */
         .about {
-            max-width: 820px;
+            width: min(var(--max), 92%);
             margin: 0 auto;
         }
 
