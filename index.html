@@ -313,91 +313,125 @@
         }
 
         /* ---------------- FOOTER ---------------- */
-        .footer {
-            background: var(--paper);
-            border-top: 1px solid rgba(255, 255, 255, 0.08);
-            padding: 60px 0 40px;
-            color: var(--muted);
-            text-align: center;
-        }
+/* ---------------- FOOTER ---------------- */
+.footer {
+  background: var(--paper);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 70px 0 50px;
+  color: var(--muted);
+  text-align: center;
+}
 
-        .footer-inner {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 24px;
-        }
+.footer-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+}
 
-        .footer-logo {
-            height: 125px;
-            /* same as header logo */
-            width: auto;
-            display: block;
-            transition: transform 0.25s ease;
-            margin: 0 auto;
-        }
+/* Brand */
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
 
-        .footer-logo:hover {
-            transform: scale(1.04);
-        }
+.footer-brand a {
+  display: inline-block;
+}
 
-        .footer-nav {
-            display: flex;
-            gap: 24px;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
+.footer-logo {
+  height: 125px;
+  width: auto;
+  display: block;
+  transition: transform 0.25s ease;
+  margin: 0 auto;
+}
 
-        .footer-nav a {
-            color: var(--muted);
-            transition: color 0.2s ease;
-        }
+.footer-logo:hover {
+  transform: scale(1.04);
+}
 
-        .footer-nav a:hover {
-            color: var(--text);
-        }
+.tagline {
+  color: var(--text);
+  font-weight: 500;
+  font-size: 1rem;
+  margin: 4px 0 0;
+}
 
-        .footer-copy {
-            font-size: 0.9rem;
-            color: var(--muted);
-        }
+/* Navigation */
+.footer-nav {
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 
-        .footer-brand {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            text-align: center;
-        }
+.footer-nav a {
+  color: var(--muted);
+  font-size: 1rem;
+  transition: color 0.2s ease;
+}
 
+.footer-nav a:hover {
+  color: var(--accent);
+}
 
-        .footer-brand a {
-            display: inline-block;
-        }
+/* Social Icons */
+.footer-social {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+}
 
-        .footer-brand img.footer-logo {
-            height: 90px;
-            /* adjust if you want it larger */
-            width: auto;
-            display: block;
-        }
+.footer-social a {
+  display: inline-block;
+  transition: transform 0.25s ease;
+}
 
-        .footer-brand .tagline {
-            color: var(--text);
-            font-weight: 500;
-            margin: 0;
-            font-size: 1rem;
-        }
+.footer-social a:hover {
+  transform: translateY(-3px);
+}
 
+.social-icon {
+  height: 28px;
+  width: 28px;
+  object-fit: contain;
+  filter: brightness(0) invert(1); /* makes white on dark background */
+  transition: filter 0.25s ease;
+}
 
-        .tagline {
-            color: var(--text);
-            font-weight: 500;
-            margin-bottom: 10px;
-        }
+/* Copyright */
+.footer-copy {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
 
+/* ---------------- RESPONSIVE ---------------- */
+@media (max-width: 600px) {
+  .footer {
+    padding: 50px 0 40px;
+  }
 
+  .footer-logo {
+    height: 100px;
+  }
+
+  .footer-nav {
+    gap: 20px;
+  }
+
+  .footer-social {
+    gap: 18px;
+  }
+
+  .social-icon {
+    height: 24px;
+    width: 24px;
+  }
+}
 
         /* ---------------- RESPONSIVE ---------------- */
         @media (max-width: 900px) {
@@ -653,28 +687,47 @@
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="container footer-inner">
-            <div class="footer-brand">
-                <a href="/" aria-label="Sonny Side Home">
-                    <img src="logo.png" alt="Sonny Side Logo" class="footer-logo">
-                    <p class="tagline">Marketing on the Bright Side.</p>
-                </a>
-            </div>
+<footer class="footer">
+    <div class="container footer-inner">
 
-            <nav class="footer-nav">
-                <a href="#services">Services</a>
-                <a href="#work">Work</a>
-                <a href="#about">About</a>
-                <a href="#contact">Contact</a>
-            </nav>
-
-            <div class="footer-copy">
-                <p>© 2025 Sonny Side. All rights reserved.</p>
-            </div>
+        <!-- Logo & tagline -->
+        <div class="footer-brand">
+            <a href="/" aria-label="Sonny Side Home">
+                <img src="logo.png" alt="Sonny Side Logo" class="footer-logo">
+            </a>
+            <p class="tagline">Marketing on the Bright Side.</p>
         </div>
-    </footer>
 
+        <!-- Footer navigation -->
+        <nav class="footer-nav">
+            <a href="#services">Services</a>
+            <a href="#work">Work</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+        <!-- Social media icons -->
+        <div class="footer-social">
+            <a href="https://www.instagram.com" target="_blank" rel="noopener" aria-label="Instagram">
+                <img src="sociallogos/insta.png" alt="Instagram" class="social-icon">
+            </a>
+            <a href="https://www.linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn">
+                <img src="sociallogos/in.png" alt="LinkedIn" class="social-icon">
+            </a>
+            <a href="https://www.facebook.com" target="_blank" rel="noopener" aria-label="Facebook">
+                <img src="sociallogos/fb.png" alt="Facebook" class="social-icon">
+            </a>
+            <a href="https://www.x.com" target="_blank" rel="noopener" aria-label="X (Twitter)">
+                <img src="sociallogos/x.png" alt="X" class="social-icon">
+            </a>
+        </div>
+
+        <!-- Copyright -->
+        <div class="footer-copy">
+            <p>© 2025 Sonny Side. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
 
     <script>
         let lastScrollY = window.scrollY;
