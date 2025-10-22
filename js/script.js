@@ -43,5 +43,20 @@
                 });
             });
         }
+function handleSubmit(event) {
+    event.preventDefault();
+    const form = event.target;
 
+    // Send the form to Netlify
+    fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(new FormData(form)).toString(),
+    })
+        .then(() => {
+            document.getElementById("form-content").style.display = "none";
+            document.getElementById("thank-you").style.display = "block";
+        })
+        .catch((error) => alert("Something went wrong. Please try again."));
+}
         document.getElementById("year").textContent = new Date().getFullYear();
