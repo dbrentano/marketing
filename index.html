@@ -317,7 +317,7 @@
 .footer {
   background: var(--paper);
   border-top: 1px solid rgba(255, 255, 255, 0.08);
-  padding: 70px 0 50px;
+  padding: 10px 0 50px;
   color: var(--muted);
   text-align: center;
 }
@@ -326,7 +326,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 32px;
+  gap: 36px;
 }
 
 /* Brand */
@@ -338,16 +338,11 @@
   gap: 8px;
 }
 
-.footer-brand a {
-  display: inline-block;
-}
-
 .footer-logo {
   height: 125px;
   width: auto;
   display: block;
   transition: transform 0.25s ease;
-  margin: 0 auto;
 }
 
 .footer-logo:hover {
@@ -357,26 +352,41 @@
 .tagline {
   color: var(--text);
   font-weight: 500;
-  font-size: 1rem;
-  margin: 4px 0 0;
+  font-size: .9rem;
+  margin: -25px 0 0;
 }
 
-/* Navigation */
+/* Footer Navigation / Sitemap */
+.footer-nav-wrapper {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
 .footer-nav {
-  display: flex;
-  gap: 32px;
-  flex-wrap: wrap;
+  display: flex !important;
   justify-content: center;
+  flex-wrap: wrap;
+  gap: 24px;
+  opacity: 1 !important;
+  visibility: visible !important;
+  position: relative;
+  z-index: 5;
+  margin-top: -55px;
+  margin-bottom: 40px;
 }
 
 .footer-nav a {
+  display: inline-block;
   color: var(--muted);
   font-size: 1rem;
-  transition: color 0.2s ease;
+  font-weight: 400;
+  text-decoration: none;
+  transition: color 0.25s ease;
 }
 
 .footer-nav a:hover {
-  color: var(--accent);
+  color: var(--text);
 }
 
 /* Social Icons */
@@ -384,6 +394,8 @@
   display: flex;
   justify-content: center;
   gap: 24px;
+  width: 100%; /* added */
+  margin-top: 6px; /* added */
 }
 
 .footer-social a {
@@ -396,17 +408,18 @@
 }
 
 .social-icon {
-  height: 28px;
-  width: 28px;
+  height: 50px;
+  width: 50px;
   object-fit: contain;
-  filter: brightness(0) invert(1); /* makes white on dark background */
-  transition: filter 0.25s ease;
+  filter: brightness(0) invert(1); /* keeps icons white */
 }
 
 /* Copyright */
 .footer-copy {
   font-size: 0.9rem;
   color: var(--muted);
+  margin-top: 30px;
+  margin-bottom: 20px;
 }
 
 /* ---------------- RESPONSIVE ---------------- */
@@ -420,11 +433,7 @@
   }
 
   .footer-nav {
-    gap: 20px;
-  }
-
-  .footer-social {
-    gap: 18px;
+    gap: 16px;
   }
 
   .social-icon {
@@ -432,6 +441,30 @@
     width: 24px;
   }
 }
+
+        /* ---------------- RESPONSIVE ---------------- */
+        @media (max-width: 600px) {
+            .footer {
+                padding: 50px 0 40px;
+            }
+
+            .footer-logo {
+                height: 100px;
+            }
+
+            .footer-nav {
+                gap: 20px;
+            }
+
+            .footer-social {
+                gap: 18px;
+            }
+
+            .social-icon {
+                height: 24px;
+                width: 24px;
+            }
+        }
 
         /* ---------------- RESPONSIVE ---------------- */
         @media (max-width: 900px) {
@@ -687,47 +720,52 @@
     </section>
 
     <!-- Footer -->
-<footer class="footer">
-    <div class="container footer-inner">
+    <footer class="footer">
+        <div class="container footer-inner">
 
-        <!-- Logo & tagline -->
-        <div class="footer-brand">
-            <a href="/" aria-label="Sonny Side Home">
-                <img src="logo.png" alt="Sonny Side Logo" class="footer-logo">
-            </a>
-            <p class="tagline">Marketing on the Bright Side.</p>
+            <!-- Logo & tagline -->
+            <div class="footer-brand">
+                <a href="/" aria-label="Sonny Side Home">
+                    <img src="logo.png" alt="Sonny Side Logo" class="footer-logo">
+                </a>
+                <p class="tagline">Marketing on the Bright Side.</p>
+            </div>
+
+            <!-- Footer navigation / sitemap -->
+            <div class="footer-nav-wrapper">
+                <nav class="footer-nav">
+                    <a href="#services">Services</a>
+                    <a href="#work">Work</a>
+                    <a href="#about">About</a>
+                    <a href="#contact">Contact</a>
+                    <a href="#privacy">Privacy Policy</a>
+                    <a href="#terms">Terms of Service</a>
+                </nav>
+            </div>
+
+            <!-- Social media icons -->
+            <div class="footer-social">
+                <a href="https://www.instagram.com" target="_blank" rel="noopener" aria-label="Instagram">
+                    <img src="sociallogos/insta.png" alt="Instagram" class="social-icon">
+                </a>
+                <a href="https://www.linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn">
+                    <img src="sociallogos/in.png" alt="LinkedIn" class="social-icon">
+                </a>
+                <a href="https://www.facebook.com" target="_blank" rel="noopener" aria-label="Facebook">
+                    <img src="sociallogos/fb.png" alt="Facebook" class="social-icon">
+                </a>
+                <a href="https://www.x.com" target="_blank" rel="noopener" aria-label="X (Twitter)">
+                    <img src="sociallogos/x.png" alt="X" class="social-icon">
+                </a>
+            </div>
+
+            <!-- Copyright -->
+            <div class="footer-copy">
+                <p>© 2025 Sonny Side. All rights reserved.</p>
+            </div>
         </div>
+    </footer>
 
-        <!-- Footer navigation -->
-        <nav class="footer-nav">
-            <a href="#services">Services</a>
-            <a href="#work">Work</a>
-            <a href="#about">About</a>
-            <a href="#contact">Contact</a>
-        </nav>
-
-        <!-- Social media icons -->
-        <div class="footer-social">
-            <a href="https://www.instagram.com" target="_blank" rel="noopener" aria-label="Instagram">
-                <img src="sociallogos/insta.png" alt="Instagram" class="social-icon">
-            </a>
-            <a href="https://www.linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn">
-                <img src="sociallogos/in.png" alt="LinkedIn" class="social-icon">
-            </a>
-            <a href="https://www.facebook.com" target="_blank" rel="noopener" aria-label="Facebook">
-                <img src="sociallogos/fb.png" alt="Facebook" class="social-icon">
-            </a>
-            <a href="https://www.x.com" target="_blank" rel="noopener" aria-label="X (Twitter)">
-                <img src="sociallogos/x.png" alt="X" class="social-icon">
-            </a>
-        </div>
-
-        <!-- Copyright -->
-        <div class="footer-copy">
-            <p>© 2025 Sonny Side. All rights reserved.</p>
-        </div>
-    </div>
-</footer>
 
     <script>
         let lastScrollY = window.scrollY;
