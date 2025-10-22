@@ -31,10 +31,67 @@
         </div>
 
         <style>
+            .contact-hero{
+                padding-top: 60px;
+            }
+            .contact{
+                margin-top: -60px;
+            }
         </style>
 
     </header>
 
+<!-- Contact Page -->
+<section class="hero contact-hero">
+    <div class="container">
+        <h1>Let’s Connect</h1>
+        <p>We’d love to learn more about your goals and explore how Sonny Side can help your brand grow.
+            Fill out the form below and we’ll be in touch soon.</p>
+    </div>
+</section>
+
+<section class="section contact">
+    <div class="container">
+        <div class="card">
+            <p class="muted" style="margin:6px 0 16px">Tell us about your product and goals, we’ll reply with next
+                steps.</p>
+        
+            <form name="contact" method="POST" data-netlify="true" action="/thank-you" data-netlify-honeypot="bot-field">
+                <input type="hidden" name="form-name" value="contact" />
+                <p style="display:none"><label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
+                </p>
+        
+                <div class="field">
+                    <label for="name">Full name</label>
+                    <input id="name" name="name" type="text" required />
+                </div>
+                <div class="field">
+                    <label for="email">Email</label>
+                    <input id="email" name="email" type="email" required />
+                </div>
+                <div class="field">
+                    <label for="company">Company</label>
+                    <input id="company" name="company" type="text" placeholder="" />
+                </div>
+                <div class="field">
+                    <label for="goal">Primary goal</label>
+                    <select id="goal" name="goal" required>
+                        <option value="">Select one…</option>
+                        <option>Increase qualified pipeline</option>
+                        <option>Improve activation/retention (PLG)</option>
+                        <option>Fix analytics/attribution</option>
+                        <option>Revamp messaging & conversion</option>
+                    </select>
+                </div>
+                <div class="field">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Context, timeline, targets…"></textarea>
+                </div>
+                <button class="btn" type="submit">Request intro call</button>
+            </form>
+        </div>
+    </div>
+</section>
 
 
     <!-- Footer -->
