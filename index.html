@@ -62,8 +62,10 @@
             backdrop-filter: blur(6px);
             border-bottom: 1px solid rgba(255, 255, 255, 0.08);
             transition: transform 0.35s ease, opacity 0.25s ease;
-            overflow: visible; /* allows logo to overlap bottom border */
-            height: 280px; /* taller to fit logo overlap */
+            overflow: visible;
+            /* allows logo to overlap bottom border */
+            height: 280px;
+            /* taller to fit logo overlap */
         }
 
         /* Hidden state */
@@ -122,7 +124,8 @@
             position: absolute;
             left: 50%;
             transform: translateX(-50%);
-            bottom: -95px; /* adjust overlap depth */
+            bottom: -95px;
+            /* adjust overlap depth */
             z-index: 1;
             display: flex;
             justify-content: center;
@@ -311,11 +314,89 @@
 
         /* ---------------- FOOTER ---------------- */
         .footer {
-            padding: 44px 0 66px;
-            text-align: center;
+            background: var(--paper);
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 60px 0 40px;
             color: var(--muted);
-            font-size: .95rem;
+            text-align: center;
         }
+
+        .footer-inner {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .footer-logo {
+            height: 125px;
+            /* same as header logo */
+            width: auto;
+            display: block;
+            transition: transform 0.25s ease;
+            margin: 0 auto;
+        }
+
+        .footer-logo:hover {
+            transform: scale(1.04);
+        }
+
+        .footer-nav {
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .footer-nav a {
+            color: var(--muted);
+            transition: color 0.2s ease;
+        }
+
+        .footer-nav a:hover {
+            color: var(--text);
+        }
+
+        .footer-copy {
+            font-size: 0.9rem;
+            color: var(--muted);
+        }
+
+        .footer-brand {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            text-align: center;
+        }
+
+
+        .footer-brand a {
+            display: inline-block;
+        }
+
+        .footer-brand img.footer-logo {
+            height: 90px;
+            /* adjust if you want it larger */
+            width: auto;
+            display: block;
+        }
+
+        .footer-brand .tagline {
+            color: var(--text);
+            font-weight: 500;
+            margin: 0;
+            font-size: 1rem;
+        }
+
+
+        .tagline {
+            color: var(--text);
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+
 
 
         /* ---------------- RESPONSIVE ---------------- */
@@ -411,13 +492,14 @@
             }
 
             .brand {
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            bottom: -120px; /* adjust overlap depth */
-            z-index: 1;
-            display: flex;
-            justify-content: center;
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                bottom: -120px;
+                /* adjust overlap depth */
+                z-index: 1;
+                display: flex;
+                justify-content: center;
             }
         }
     </style>
@@ -518,8 +600,10 @@
     <section id="about" class="container section about">
         <h2>About Sonny Side</h2>
         <p class="muted">
-            Sonny Side helps brands connect creativity with performance. We combine strategic positioning, demand generation, and
-            data-driven insights to accelerate growth — without the agency ego. Our approach helps organizations stand out, build
+            Sonny Side helps brands connect creativity with performance. We combine strategic positioning, demand
+            generation, and
+            data-driven insights to accelerate growth — without the agency ego. Our approach helps organizations stand
+            out, build
             trust, and scale with clarity and confidence.
         </p>
     </section>
@@ -569,9 +653,28 @@
     </section>
 
     <!-- Footer -->
-    <footer class="container footer">
-        <small>© <span id="year"></span> Sonny Side. All rights reserved.</small>
+    <footer class="footer">
+        <div class="container footer-inner">
+            <div class="footer-brand">
+                <a href="/" aria-label="Sonny Side Home">
+                    <img src="logo.png" alt="Sonny Side Logo" class="footer-logo">
+                    <p class="tagline">Marketing on the Bright Side.</p>
+                </a>
+            </div>
+
+            <nav class="footer-nav">
+                <a href="#services">Services</a>
+                <a href="#work">Work</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </nav>
+
+            <div class="footer-copy">
+                <p>© 2025 Sonny Side. All rights reserved.</p>
+            </div>
+        </div>
     </footer>
+
 
     <script>
         let lastScrollY = window.scrollY;
