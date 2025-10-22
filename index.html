@@ -54,17 +54,17 @@
         <div class="subline">Strategy • Story • Demand • Content • Analytics</div>
     </section>
 
-        <!-- About -->
-        <section id="about" class="container section about">
-            <h2>About Sonny Side</h2>
-            <p class="muted">
-                Sonny Side helps brands connect creativity with performance. We combine strategic positioning, demand
-                generation, and
-                data-driven insights to accelerate growth without the agency ego. Our approach helps organizations stand
-                out, build
-                trust, and scale with clarity and confidence.
-            </p>
-        </section>
+    <!-- About -->
+    <section id="about" class="container section about">
+        <h2>About Sonny Side</h2>
+        <p class="muted">
+            Sonny Side helps brands connect creativity with performance. We combine strategic positioning, demand
+            generation, and
+            data-driven insights to accelerate growth without the agency ego. Our approach helps organizations stand
+            out, build
+            trust, and scale with clarity and confidence.
+        </p>
+    </section>
 
     <!-- Services -->
     <section id="services" class="container section">
@@ -126,55 +126,63 @@
     <section id="contact" class="container section contact">
         <h2>Let’s talk</h2>
         <div class="card">
-                    <form name="home contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" onsubmit="handleSubmit(event)">
-                        <input type="hidden" name="form-name" value="contact" />
-                        <p style="display:none"><label>Don’t fill this out if you’re human: <input name="bot-field" /></label></p>
-                    
-                        <div id="form-content">
-                            <p class="muted" style="margin:6px 0 16px">Tell us about your product and goals, we’ll reply with next
-                                steps.</p>
-                            <div class="field">
-                                <label for="name">Full name</label>
-                                <input id="name" name="name" type="text" required />
-                            </div>
-                    
-                            <div class="field">
-                                <label for="email">Email</label>
-                                <input id="email" name="email" type="email" required />
-                            </div>
-                    
-                            <div class="field">
-                                <label for="company">Company</label>
-                                <input id="company" name="company" type="text" />
-                            </div>
-                    
-                            <div class="field">
-                                <label for="goal">Primary goal</label>
-                                <select id="goal" name="goal" required>
-                                    <option value="">Select one…</option>
-                                    <option>Increase qualified pipeline</option>
-                                    <option>Improve activation/retention (PLG)</option>
-                                    <option>Fix analytics/attribution</option>
-                                    <option>Revamp messaging & conversion</option>
-                                </select>
-                            </div>
-                    
-                            <div class="field">
-                                <label for="message">Message</label>
-                                <textarea id="message" name="message" rows="5" placeholder="Context, timeline, targets…"></textarea>
-                            </div>
-                    
-                            <button class="btn" type="submit">Submit</button>
-                        </div>
-                    
-                        <p id="thank-you"
-                            style="display:none; text-align:center; margin-top:20px; max-width:700px; margin-left:auto; margin-right:auto; line-height:1.6; color:var(--text);">
-                            Thank you for reaching out to Sonny Side. We appreciate your interest and look forward to connecting soon to
-                            learn
-                            more about your goals and how we can help you achieve them.
-                        </p>
-                    
-                    </form>
+            <form name="contact home" method="POST" data-netlify="true" onsubmit="handleSubmit(event)">
+                <input type="hidden" name="form-name" value="contact home" />
+                <p style="display:none"><label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
+                </p>
+
+                <div id="form-content">
+                    <p class="muted" style="margin:6px 0 16px">Tell us about your product and goals, we’ll reply with
+                        next
+                        steps.</p>
+                    <div class="field">
+                        <label for="name">Full name</label>
+                        <input id="name" name="name" type="text" required />
+                    </div>
+
+                    <div class="field">
+                        <label for="email">Email</label>
+                        <input id="email" name="email" type="email" required />
+                    </div>
+
+                    <div class="field">
+                        <label for="phone">Phone</label>
+                        <input id="phone" name="phone" type="phone" required />
+                    </div>
+
+                    <div class="field">
+                        <label for="company">Company</label>
+                        <input id="company" name="company" type="text" />
+                    </div>
+
+                    <div class="field">
+                        <label for="goal">Primary goal</label>
+                        <select id="goal" name="goal" required>
+                            <option value="">Select one…</option>
+                            <option>Increase qualified pipeline</option>
+                            <option>Improve activation/retention (PLG)</option>
+                            <option>Fix analytics/attribution</option>
+                            <option>Revamp messaging & conversion</option>
+                        </select>
+                    </div>
+
+                    <div class="field">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5"
+                            placeholder="Context, timeline, targets…"></textarea>
+                    </div>
+
+                    <button class="btn" type="submit">Submit</button>
+                </div>
+
+                <p id="thank-you"
+                    style="display:none; text-align:center; margin-top:20px; max-width:700px; margin-left:auto; margin-right:auto; line-height:1.6; color:var(--text);">
+                    Thank you for reaching out to Sonny Side. We appreciate your interest and look forward to connecting
+                    soon to
+                    learn
+                    more about your goals and how we can help you achieve them.
+                </p>
+            </form>
         </div>
     </section>
 
