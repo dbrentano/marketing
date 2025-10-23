@@ -518,14 +518,16 @@
             .mobile-footer-accordion summary::after {
                 content: "▾";
                 position: absolute;
-                right: 10%;
-                transform: translateY(-1px) rotate(0deg);
+                right: 12%;
+                top: 50%;
+                transform: translateY(-50%) rotate(0deg);
                 transition: transform .2s ease;
                 opacity: 0.8;
+                font-size: 3rem;
             }
 
             .mobile-footer-accordion details[open] summary::after {
-                transform: translateY(-1px) rotate(180deg);
+                transform: translateY(-50%) rotate(180deg);
             }
 
             .mobile-footer-nav,
