@@ -274,6 +274,11 @@
             .work-card {
                 border: 5px solid rgba(255, 255, 255, .06);
             }
+            /* Click (active) effect */
+            .work-card:active {
+                transform: translateY(-6px) scale(.98);
+                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+            }
         }
 
         .work-card.visible {
@@ -655,11 +660,5 @@
                 z-index: 1;
                 display: flex;
                 justify-content: center;
-            }
-
-            /* Click (active) effect */
-            .work-card:active {
-                transform: translateY(-6px) scale(1.05);
-                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
             }
         }
