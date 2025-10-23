@@ -23,7 +23,6 @@ async function loadPartials() {
         const isHome =
             window.location.pathname === "/" ||
             window.location.pathname === "/index.html";
-        console.log("Is homepage:", isHome);
 
         // ✅ Adjust ONLY the header CTA button
         const headerBtn = document.querySelector("header.nav .nav-links .btn");
