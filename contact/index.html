@@ -7,185 +7,89 @@
     <title>About | Sonny Side</title>
     <link rel="stylesheet" href="/styles/styles.css" />
 
-            <style>
-                .contact-hero {
-                    padding-top: 60px;
-                }
-            
-                .contact {
-                    margin-top: -60px;
-                }
-            </style>
+    <style>
+        .contact-hero {
+            padding-top: 60px;
+        }
+
+        .contact {
+            margin-top: -60px;
+        }
+    </style>
 </head>
 
 <body>
-    <!-- Header -->
-    <header class="nav">
-        <div class="container header-inner">
-            <a href="/" class="brand" aria-label="SonnySide Home">
-                <img src="/images/logo.png" alt="SonnySide logo" class="logo-img" />
-            </a>
-
-            <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-
-            <nav class="nav-links">
-                <a href="/services/">Services</a>
-                <a href="/work/">Work</a>
-                <a href="/about/">About</a>
-                <a href="/contact/" class="btn">Start the Conversation</a>
-            </nav>
+    <!-- Contact Page -->
+    <section class="hero contact-hero">
+        <div class="container">
+            <h1>Let’s Connect</h1>
+            <p>We’d love to learn more about your goals and explore how Sonny Side can help your brand grow.
+                Fill out the form below and we’ll be in touch soon.</p>
         </div>
-    </header>
+    </section>
 
-<!-- Contact Page -->
-<section class="hero contact-hero">
-    <div class="container">
-        <h1>Let’s Connect</h1>
-        <p>We’d love to learn more about your goals and explore how Sonny Side can help your brand grow.
-            Fill out the form below and we’ll be in touch soon.</p>
-    </div>
-</section>
+    <section class="section contact">
+        <div class="container">
+            <div class="card">
+                <form name="contact page" method="POST" data-netlify="true" onsubmit="handleSubmit(event)">
+                    <input type="hidden" name="form-name" value="contact page" />
+                    <p style="display:none"><label>Don’t fill this out if you’re human: <input
+                                name="bot-field" /></label></p>
 
-<section class="section contact">
-    <div class="container">
-        <div class="card">
-            <form name="contact page" method="POST" data-netlify="true" onsubmit="handleSubmit(event)">
-                <input type="hidden" name="form-name" value="contact page" />
-                <p style="display:none"><label>Don’t fill this out if you’re human: <input name="bot-field" /></label></p>
-            
-                <div id="form-content">
-                                    <p class="muted" style="margin:6px 0 16px">Tell us about your product and goals, we’ll reply with next
-                                        steps.</p>
-                    <div class="field">
-                        <label for="name">Full name</label>
-                        <input id="name" name="name" type="text" required />
+                    <div id="form-content">
+                        <p class="muted" style="margin:6px 0 16px">Tell us about your product and goals, we’ll reply
+                            with next
+                            steps.</p>
+                        <div class="field">
+                            <label for="name">Full name</label>
+                            <input id="name" name="name" type="text" required />
+                        </div>
+
+                        <div class="field">
+                            <label for="email">Email</label>
+                            <input id="email" name="email" type="email" required />
+                        </div>
+
+                        <div class="field">
+                            <label for="phone">Phone</label>
+                            <input id="phone" name="phone" type="phone" required />
+                        </div>
+
+                        <div class="field">
+                            <label for="company">Company</label>
+                            <input id="company" name="company" type="text" />
+                        </div>
+
+                        <div class="field">
+                            <label for="goal">Primary goal</label>
+                            <select id="goal" name="goal" required>
+                                <option value="">Select one…</option>
+                                <option>Increase qualified pipeline</option>
+                                <option>Improve activation/retention (PLG)</option>
+                                <option>Fix analytics/attribution</option>
+                                <option>Revamp messaging & conversion</option>
+                            </select>
+                        </div>
+
+                        <div class="field">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5"
+                                placeholder="Context, timeline, targets…"></textarea>
+                        </div>
+
+                        <button class="btn" type="submit">Submit</button>
                     </div>
-            
-                    <div class="field">
-                        <label for="email">Email</label>
-                        <input id="email" name="email" type="email" required />
-                    </div>
 
-                    <div class="field">
-                        <label for="phone">Phone</label>
-                        <input id="phone" name="phone" type="phone" required />
-                    </div>
-            
-                    <div class="field">
-                        <label for="company">Company</label>
-                        <input id="company" name="company" type="text" />
-                    </div>
-            
-                    <div class="field">
-                        <label for="goal">Primary goal</label>
-                        <select id="goal" name="goal" required>
-                            <option value="">Select one…</option>
-                            <option>Increase qualified pipeline</option>
-                            <option>Improve activation/retention (PLG)</option>
-                            <option>Fix analytics/attribution</option>
-                            <option>Revamp messaging & conversion</option>
-                        </select>
-                    </div>
-            
-                    <div class="field">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" rows="5" placeholder="Context, timeline, targets…"></textarea>
-                    </div>
-            
-                    <button class="btn" type="submit">Submit</button>
-                </div>
-            
-                <p id="thank-you"
-                    style="display:none; text-align:center; margin-top:20px; max-width:700px; margin-left:auto; margin-right:auto; line-height:1.6; color:var(--text);">
-                    Thank you for reaching out to Sonny Side. We appreciate your interest and look forward to connecting soon to learn
-                    more about your goals and how we can help you achieve them.
-                </p>
-            </form>
-        </div>
-    </div>
-</section>
-
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container footer-inner">
-
-            <!-- Logo & tagline -->
-            <div class="footer-brand">
-                <a href="/" aria-label="Sonny Side Home">
-                    <img src="/images/logo.png" alt="Sonny Side Logo" class="footer-logo">
-                </a>
-                <p class="tagline">Marketing on the Bright Side.</p>
-            </div>
-
-            <!-- Footer navigation / sitemap -->
-            <div class="footer-nav-wrapper">
-                <nav class="footer-nav">
-                    <a href="/services/">Services</a>
-                    <a href="/work/">Work</a>
-                    <a href="/about/">About</a>
-                    <a href="/contact/">Contact</a>
-                </nav>
-            </div>
-
-            <!-- Social media icons -->
-            <div class="footer-social">
-                <a href="https://www.instagram.com" target="_blank" rel="noopener" aria-label="Instagram">
-                    <img src="/sociallogos/insta.png" alt="Instagram" class="social-icon">
-                </a>
-                <a href="https://www.linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn">
-                    <img src="/sociallogos/in.png" alt="LinkedIn" class="social-icon">
-                </a>
-                <a href="https://www.facebook.com" target="_blank" rel="noopener" aria-label="Facebook">
-                    <img src="/sociallogos/fb.png" alt="Facebook" class="social-icon">
-                </a>
-                <a href="https://www.x.com" target="_blank" rel="noopener" aria-label="X (Twitter)">
-                    <img src="/sociallogos/x.png" alt="X" class="social-icon">
-                </a>
-            </div>
-
-            <!-- MOBILE-ONLY ACCORDION (shown only under 900px) -->
-            <div class="mobile-footer-accordion">
-                <details>
-                    <summary>Navigation</summary>
-                    <div class="mobile-footer-nav">
-                        <a href="/services/">Services</a>
-                        <a href="/work/">Work</a>
-                        <a href="/about/">About</a>
-                        <a href="/contact/">Contact</a>
-                    </div>
-                </details>
-
-                <details>
-                    <summary>Connect</summary>
-                    <div class="mobile-footer-social">
-                        <a href="https://www.instagram.com" target="_blank" rel="noopener">
-                            <img src="/sociallogos/insta.png" alt="Instagram" class="social-icon">
-                        </a>
-                        <a href="https://www.linkedin.com" target="_blank" rel="noopener">
-                            <img src="/sociallogos/in.png" alt="LinkedIn" class="social-icon">
-                        </a>
-                        <a href="https://www.facebook.com" target="_blank" rel="noopener">
-                            <img src="/sociallogos/fb.png" alt="Facebook" class="social-icon">
-                        </a>
-                        <a href="https://www.x.com" target="_blank" rel="noopener">
-                            <img src="/sociallogos/x.png" alt="X" class="social-icon">
-                        </a>
-                    </div>
-                    <a class="btn" href="/contact/" style="margin-bottom: 20px;">Start the Conversation</a>
-                </details>
-            </div>
-
-            <!-- Copyright -->
-            <div class="footer-copy">
-                <p>© 2025 Sonny Side. All rights reserved.</p>
+                    <p id="thank-you"
+                        style="display:none; text-align:center; margin-top:20px; max-width:700px; margin-left:auto; margin-right:auto; line-height:1.6; color:var(--text);">
+                        Thank you for reaching out to Sonny Side. We appreciate your interest and look forward to
+                        connecting soon to learn
+                        more about your goals and how we can help you achieve them.
+                    </p>
+                </form>
             </div>
         </div>
-    </footer>
+    </section>
 
     <script src="/js/script.js"></script>
 </body>
