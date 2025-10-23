@@ -67,5 +67,22 @@ function handleSubmit(event) {
         .catch(() => alert("Something went wrong. Please try again."));
 }
 
+// ------------------- CARD FADE-IN -------------------
+const workCardObserver = new IntersectionObserver(
+    (entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                workCardObserver.unobserve(entry.target);
+            }
+        });
+    },
+    { threshold: 0.2 }
+);
+
+document.querySelectorAll('.work-card').forEach(card => {
+    workCardObserver.observe(card);
+});
+
 // ------------------- FOOTER YEAR -------------------
 document.getElementById("year").textContent = new Date().getFullYear();
