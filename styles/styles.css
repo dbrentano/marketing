@@ -211,16 +211,16 @@
 
         form .btn {
             display: block;
-                /* ensures it takes full width context for centering */
-                margin: 24px auto 0;
-                /* centers horizontally */
-                padding: 14px 50px;
-                /* bigger button */
-                font-size: 1.1rem;
-                /* slightly larger text */
-                border-radius: 12px;
-                /* keep consistent with rest of design */
-                text-align: center;
+            /* ensures it takes full width context for centering */
+            margin: 24px auto 0;
+            /* centers horizontally */
+            padding: 14px 50px;
+            /* bigger button */
+            font-size: 1.1rem;
+            /* slightly larger text */
+            border-radius: 12px;
+            /* keep consistent with rest of design */
+            text-align: center;
         }
 
         .subline {
@@ -250,6 +250,14 @@
             border: 1px solid rgba(255, 255, 255, .06);
             border-radius: var(--radius);
             padding: 18px;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+            cursor: pointer;
+        }
+
+        /* Hover effect */
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
         }
 
         .card h3 {
@@ -438,7 +446,7 @@
             }
 
             .tagline {
-            margin: -30px 0 0;
+                margin: -30px 0 0;
             }
 
             /* Hide desktop footer links/icons on mobile */
@@ -497,7 +505,8 @@
                 gap: 12px;
                 padding: 10px 0 16px;
             }
-            .mobile-footer-social{
+
+            .mobile-footer-social {
                 flex-direction: row;
             }
 
@@ -619,5 +628,11 @@
                 z-index: 1;
                 display: flex;
                 justify-content: center;
+            }
+
+            /* Click (active) effect */
+            .card:active {
+                transform: translateY(-6px) scale(1.05);
+                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
             }
         }
