@@ -254,13 +254,26 @@
             cursor: pointer;
         }
 
+        .card h3 {
+            margin: 0 0 6px;
+        }
+
+        .work-card {
+            background: var(--paper);
+            border: 1px solid rgba(255, 255, 255, .06);
+            border-radius: var(--radius);
+            padding: 18px;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+            cursor: pointer;
+        }
+
         /* Hover effect */
-        .card:hover {
+        .work-card:hover {
             transform: translateY(-6px);
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
         }
 
-        .card h3 {
+        .work-card h3 {
             margin: 0 0 6px;
         }
 
@@ -631,7 +644,7 @@
             }
 
             /* Click (active) effect */
-            .card:active {
+            .work-card:active {
                 transform: translateY(-6px) scale(1.05);
                 box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
             }
