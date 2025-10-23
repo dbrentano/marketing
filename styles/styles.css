@@ -260,11 +260,16 @@
 
         .work-card {
             background: var(--paper);
-            border: 1px solid rgba(255, 255, 255, .06);
+            border: 2px solid rgba(255, 255, 255, .06);
             border-radius: var(--radius);
             padding: 18px;
             transition: transform 0.25s ease, box-shadow 0.25s ease;
             cursor: pointer;
+        }
+        @media (max-width: 900px) {
+            .work-card {
+                border: 5px solid rgba(255, 255, 255, .06);
+            }
         }
 
         /* Hover effect */
