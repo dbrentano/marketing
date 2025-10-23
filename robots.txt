@@ -1,0 +1,13 @@
+# Sonny Side Studio Robots.txt
+User-agent: *
+# Allow all pages to be indexed
+Allow: /
+
+# Disallow internal or non-public assets
+Disallow: /js/
+Disallow: /templates/
+Disallow: /images/
+Disallow: /sociallogos/
+
+# Sitemap location
+Sitemap: https://www.sonnysidestudio.com/sitemap.xml
