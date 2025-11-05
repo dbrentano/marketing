@@ -108,7 +108,7 @@
             position: absolute;
             left: 50%;
             transform: translateX(-50%);
-            bottom: -95px;
+            bottom: -85px;
             /* adjust overlap depth */
             z-index: 1;
             display: flex;
@@ -308,7 +308,7 @@
 
         @media (max-width: 900px) {
             .work-card {
-                border: 5px solid rgba(255, 255, 255, .06);
+                border: 1px solid #FFD96A;
             }
 
             /* Click (active) effect */
@@ -753,7 +753,7 @@
 
             .brand img.logo-img {
                 height: 175px;
-                margin-top: 60px;
+                margin-top: -182px;
             }
 
             .grid {
