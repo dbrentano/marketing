@@ -73,6 +73,8 @@
             align-items: center;
             justify-content: center;
             gap: 50px;
+            white-space: nowrap;
+            flex-wrap: nowrap;
         }
 
         nav a {
@@ -80,6 +82,7 @@
             font-weight: 500;
             font-size: 1.1rem;
             transition: color 0.2s ease;
+            white-space: nowrap;
         }
 
         nav a:hover {
@@ -120,6 +123,28 @@
 
         .brand img.logo-img:hover {
             transform: scale(1.04);
+        }
+
+        .logo-arc {
+            width: 300px;
+            height: auto;
+            display: block;
+        }
+
+        .logo-arc text {
+            font-family: inherit;
+            text-transform: uppercase;
+            /* ensures consistent style */
+            pointer-events: none;
+        }
+
+        .logo-arc image {
+            transition: transform 0.25s ease;
+            transform-origin: center;
+        }
+
+        .brand:hover .logo-arc image {
+            transform: scale(1.06);
         }
 
         /* --- MOBILE DROPDOWN --- */
@@ -270,10 +295,12 @@
             transform: translateY(30px);
             transition: opacity 0.6s ease, transform 0.6s ease, box-shadow 0.25s ease;
         }
+
         @media (max-width: 900px) {
             .work-card {
                 border: 5px solid rgba(255, 255, 255, .06);
             }
+
             /* Click (active) effect */
             .work-card:active {
                 transform: translateY(-6px) scale(.98);
