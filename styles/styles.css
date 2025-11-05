@@ -34,6 +34,7 @@
         }
 
         /* ---------------- HEADER ---------------- */
+        /* ---------------- HEADER ---------------- */
         header.nav {
             position: sticky;
             top: 0;
@@ -66,7 +67,7 @@
         /* nav links above logo */
         nav {
             position: absolute;
-            top: 60px;
+            top: 40px;
             left: 50%;
             transform: translateX(-50%);
             display: flex;
@@ -123,28 +124,6 @@
 
         .brand img.logo-img:hover {
             transform: scale(1.04);
-        }
-
-        .logo-arc {
-            width: 300px;
-            height: auto;
-            display: block;
-        }
-
-        .logo-arc text {
-            font-family: inherit;
-            text-transform: uppercase;
-            /* ensures consistent style */
-            pointer-events: none;
-        }
-
-        .logo-arc image {
-            transition: transform 0.25s ease;
-            transform-origin: center;
-        }
-
-        .brand:hover .logo-arc image {
-            transform: scale(1.06);
         }
 
         /* --- MOBILE DROPDOWN --- */
@@ -214,7 +193,7 @@
         }
 
         .hero p {
-            margin: 8px auto 22px;
+            margin: 8px auto 40px;
             color: var(--muted);
             max-width: 760px;
         }
@@ -262,11 +241,25 @@
         h2 {
             margin: 0 0 14px;
             font-size: clamp(1.5rem, 2.6vw, 2.1rem);
+            text-align: center;
+        }
+
+        p {
+            text-align: center;
+        }
+
+        .service-sub {
+            margin-bottom: 40px;
+            color: var(--text);
+            max-width: 760px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .grid {
             display: grid;
             gap: 18px;
+            justify-content: center;
             grid-template-columns: repeat(3, 1fr);
         }
 
@@ -285,7 +278,7 @@
 
         .work-card {
             background: var(--paper);
-            border: 2px solid rgba(255, 255, 255, .06);
+            border: 1px solid #FFD96A;
             border-radius: var(--radius);
             padding: 18px;
             transition: transform 0.25s ease, box-shadow 0.25s ease;
@@ -294,6 +287,23 @@
             opacity: 0;
             transform: translateY(30px);
             transition: opacity 0.6s ease, transform 0.6s ease, box-shadow 0.25s ease;
+        }
+
+        /* Center the services cards cleanly */
+        #services .grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 18px;
+            justify-content: center;
+            /* <-- centers every row properly */
+        }
+
+        /* Card sizing so layout stays even */
+        #services .grid .work-card {
+            flex: 1 1 320px;
+            /* basis controls min width */
+            max-width: 360px;
+            /* prevents cards from stretching too wide */
         }
 
         @media (max-width: 900px) {
@@ -321,16 +331,142 @@
 
         .work-card h3 {
             margin: 0 0 6px;
+            text-align: center;
         }
 
         .muted {
             color: var(--muted);
+            text-align: center;
         }
 
         /* ---------------- ABOUT ---------------- */
         .about {
             width: min(var(--max), 92%);
             margin: 0 auto;
+        }
+
+        /* ---------------- TESTIMONIALS ---------------- */
+        #testimonials p{
+            color: var(--text);
+            max-width: 760px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .testimonial-carousel {
+            position: relative;
+            width: 100%;
+            max-width: 760px;
+            margin: 40px auto;
+            overflow: hidden;
+        }
+
+        .t-track {
+            display: flex;
+            gap: 40px;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            padding: 40px 0;
+            scrollbar-width: none;
+        }
+
+        .t-track::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* Show ONE card centered */
+        .t-card {
+            scroll-snap-align: center;
+            flex: 0 0 80%;
+            /* Show most of the card */
+            max-width: 600px;
+            min-height: 420px;
+            background: var(--paper);
+            border: 1px solid rgba(255, 255, 255, .10);
+            border-radius: var(--radius);
+            padding: 40px 34px 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            /* keeps image+name at bottom */
+            text-align: center;
+            transition: transform .35s ease, box-shadow .35s ease;
+        }
+
+        .t-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, .25);
+        }
+
+        /* Quote stays at top */
+        .t-content {
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .quote {
+            font-size: 1.05rem;
+            line-height: 1.45;
+            color: var(--text);
+        }
+
+        /* Footer permanently at bottom */
+        .t-footer {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 28px;
+        }
+
+        .t-photo {
+            width: 80px;
+            height: 80px;
+            border-radius: 999px;
+            object-fit: cover;
+            border: 3px solid var(--accent);
+            margin-bottom: 10px;
+        }
+
+        .t-name {
+            font-weight: 600;
+            color: var(--muted);
+            text-decoration: none;
+            transition: color .25s ease, transform .25s ease;
+        }
+
+        .t-name:hover {
+            color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        /* Arrows */
+        .t-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: var(--accent);
+            font-size: 2rem;
+            cursor: pointer;
+            padding: 8px;
+            z-index: 3;
+        }
+
+        .t-left {
+            left: -10px;
+        }
+
+        .t-right {
+            right: -10px;
+        }
+
+        @media(max-width: 600px) {
+            .t-card {
+                flex: 0 0 88%;
+            }
         }
 
         /* ---------------- CONTACT ---------------- */
@@ -372,6 +508,12 @@
 
         .consent input {
             margin-top: 3px;
+        }
+
+        textarea {
+            resize: vertical;   /* up + down only */
+            max-width: 100%;    /* never exceed form width */
+            min-height: 140px;  /* optional—keeps it from collapsing too small */
         }
 
         /* ---------------- FOOTER ---------------- */
@@ -501,7 +643,7 @@
 
             .footer-logo {
                 height: 150px;
-                margin-top: -20px;
+                margin-top: 10px;
             }
 
             .tagline {
