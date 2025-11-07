@@ -198,20 +198,42 @@
             max-width: 760px;
         }
 
-        .btn {
-            display: inline-block;
-            background: var(--accent);
-            color: #1b1406;
-            font-weight: 700;
-            padding: 10px 16px;
-            border-radius: 12px;
-            transition: filter 0.2s ease;
-        }
+.btn {
+    position: relative;
+    display: inline-block;
+    background: #FFD96A;
+    /* current button yellow */
+    color: #1b1406;
+    /* current dark text */
+    font-weight: 700;
+    padding: 10px 16px;
+    border-radius: 12px;
+    overflow: hidden;
+    z-index: 1;
+    transition: color 0.25s ease;
+}
 
-        .btn:hover {
-            filter: brightness(1.1);
-            color: #fff;
-        }
+/* SWIPE HOVER BACKGROUND */
+.btn::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: #FF9A3D;
+    /* APEROL ORANGE POP */
+    transform: translateX(-100%);
+    transition: transform 0.35s cubic-bezier(.35, .1, .1, 1);
+    z-index: -1;
+}
+
+.btn:hover::before {
+    transform: translateX(0);
+}
+
+/* TEXT COLOR CHANGE ON HOVER */
+.btn:hover {
+    color: #F4F7FF;
+    /* deep navy, super readable */
+}
 
         form .btn {
             display: block;
