@@ -34,7 +34,6 @@
         }
 
         /* ---------------- HEADER ---------------- */
-        /* ---------------- HEADER ---------------- */
         header.nav {
             position: sticky;
             top: 0;
@@ -45,7 +44,7 @@
             transition: transform 0.35s ease, opacity 0.25s ease;
             overflow: visible;
             /* allows logo to overlap bottom border */
-            height: 280px;
+            height: 300px;
             /* taller to fit logo overlap */
         }
 
