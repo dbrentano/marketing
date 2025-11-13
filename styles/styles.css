@@ -483,11 +483,6 @@
             transition: transform .35s ease, box-shadow .35s ease;
         }
 
-        .t-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, .25);
-        }
-
         /* Quote stays at top */
         .t-content {
             flex-grow: 1;
@@ -535,7 +530,7 @@
         /* Arrows */
         .t-arrow {
             position: absolute;
-            top: 50%;
+            top: 55%;
             transform: translateY(-50%);
             background: none;
             border: none;
@@ -558,23 +553,44 @@
         }
 
         .t-left {
-            left: 100px;
+            left: 0px;
         }
 
         .t-right {
-            right: 100px;
+            right: 0px;
         }
 
         @media(max-width: 600px) {
             .t-card {
                 flex: 0 0 88%;
+                min-height: auto !important;
+                height: auto;
+                padding-top: 30px;
+                padding-bottom: 30px;
+                justify-content: flex-start !important;
+            }
+
+            .t-content {
+                margin-top: 20px;
+                /* ensures uniform spacing before the quote */
+                margin-bottom: 20px;
+                /* keeps spacing consistent between text and footer */
+                flex-grow: 0 !important;
+                display: block !important;
+            }
+
+            .t-footer {
+                margin-top: 0;
+                /* align footers in same position */
+                margin-bottom: 20px;
             }
 
             .t-arrow {
                 display: none;
             }
+
             #testimonials {
-            margin-top: -40px;
+                margin-top: -40px;
             }
         }
 
