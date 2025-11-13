@@ -28,7 +28,8 @@
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Marketing on the Bright Side | Sonny Side Marketing Studio" />
-    <meta name="twitter:description" content="Creative brand and growth marketing for B2B & B2C companies. Strategy that feels human. Performance that works." />
+    <meta name="twitter:description"
+        content="Creative brand and growth marketing for B2B & B2C companies. Strategy that feels human. Performance that works." />
     <meta name="twitter:image" content="https://sonnysidestudio.com/images/favicon/sonnyside-og-1200x630.png" />
     <meta name="twitter:image:alt" content="Sonny Side Marketing Studio — Creative Growth for B2B & B2C Companies" />
 
@@ -47,7 +48,7 @@
     <!-- Theme and Manifest -->
     <link rel="manifest" href="/site.webmanifest">
 
-    <link rel="stylesheet" href="/styles/styles.css"/>
+    <link rel="stylesheet" href="/styles/styles.css" />
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-EK6P2TKHM0"></script>
@@ -113,37 +114,106 @@
         </div>
     </section>
 
+    <style>
+        /* About page spacing fix */
+        .about-hero {
+            padding-top: 60px !important;
+            /* reduce from default ~100px+ */
+        }
+
+        .about-hero h1 {
+            margin-top: 0;
+        }
+
+        .about-story {
+            margin-top: -50px;
+            /* small buffer between hero and Our Story */
+        }
+
+        .about-approach {
+            margin-bottom: 50px;
+        }
+    </style>
+
+    <!-- Mission / Story Section -->
+    <section class="section about-story">
+        <div class="about-card">
+
+            <h2>Our Story</h2>
+
+            <!-- Founder Image + Name -->
+            <div class="founder-block">
+                <img src="/images/marissa.jpg" alt="Photo of Marissa Notaro" class="founder-photo">
+
+                <a href="https://www.linkedin.com/in/marissa-notaro1/" target="_blank" rel="noopener"
+                    class="founder-name">
+                    Marissa Notaro
+                </a>
+            </div>
+
+            <p>
+                Marissa started Sonny Side after years of turning vision into execution, building demand engines,
+                tightening
+                operations, and jumping into the weeds across fast-moving tech, cybersecurity, and both B2B and B2C
+                organizations. She
+                kept seeing the same challenge: teams were constantly pivoting but lacked someone who could connect the
+                dots between
+                strategy, systems, and execution.
+            </p>
+            <br>
+            <p>
+                She created Sonny Side to close that gap, a place where creative thinking, operational clarity, and revenue-focused
+                execution finally work together. Named after her dog Sonny, the studio reflects the optimism, focus, and forward
+                momentum she brings to every partnership.
+            </p>
+            <br>
+            <p>
+                Her experience in high-velocity environments taught her that real growth comes from alignment, structure, adaptability,
+                and experimentation with purpose. Sonny Side is the result, a blend of strategic leadership and hands-on delivery so
+                companies can scale with clarity and confidence.
+            </p>
+
+        </div>
+    </section>
+
     <!-- Testimonials -->
     <section id="testimonials" class="container section">
         <h2>The Sonny Side Difference</h2>
         <p>
-            Marketing leadership that’s both strategic and hands-on, bridging creative vision with operational
-            excellence.
-            We don’t just advise. We execute. We optimize. We deliver growth.
+            Every engagement starts with understanding your product, audience, revenue goals, and internal bottlenecks. We
+            collaborate with the necessary stakeholders to align priorities and build a strategic foundation. From there, we turn
+            strategy into execution, implementing the systems, processes, and campaigns needed to drive predictable growth.
         </p>
 
         <button class="t-arrow t-left" aria-label="Previous">&#10094;</button>
         <div class="testimonial-carousel">
-
-            
-
             <div class="t-track">
                 <div class="t-card">
-                    <div class="t-content">
-                        <p class="quote">“I had the real privilege of managing Marissa at Phaidon, where she joined as an intern and quickly became one of the
-                        most impressive young talents I’ve worked with. From day one, her creative instinct, energy, and ability to bring ideas
-                        to life stood out. She didn’t just deliver, she elevated every project she touched.
-                        Marissa’s growth was incredible to watch. She took on every challenge with enthusiasm, developed her strategic thinking
-                        fast, and became someone I could rely on completely. She was proactive, collaborative, and had a natural ability to
-                        connect with people across teams, always making life easier for those around her.”</p>
-                    </div>
-                    <div class="t-footer">
+                                        <div class="t-footer">
                         <img src="/images/person1.jpg" alt="Client Photo" class="t-photo">
-                        <a href="https://www.linkedin.com/in/luisrolim/" target="_blank" rel="noopener" class="t-name">Luis Rolim</a>
+                        <a href="https://www.linkedin.com/in/luisrolim/" target="_blank" rel="noopener"
+                            class="t-name">Luis Rolim</a>
+                    </div>
+                    <div class="t-content">
+                        <p class="quote">“I had the real privilege of managing Marissa at Phaidon, where she joined as
+                            an intern and quickly became one of the
+                            most impressive young talents I’ve worked with. From day one, her creative instinct, energy,
+                            and ability to bring ideas
+                            to life stood out. She didn’t just deliver, she elevated every project she touched.
+                            Marissa’s growth was incredible to watch. She took on every challenge with enthusiasm,
+                            developed her strategic thinking
+                            fast, and became someone I could rely on completely. She was proactive, collaborative, and
+                            had a natural ability to
+                            connect with people across teams, always making life easier for those around her.”</p>
                     </div>
                 </div>
 
                 <div class="t-card">
+                    <div class="t-footer">
+                        <img src="/images/person2.jpg" alt="Client Photo" class="t-photo">
+                        <a href="https://linkedin.com/in/charlottehinrichs" target="_blank" rel="noopener" class="t-name">Charlotte
+                            Hinrichs</a>
+                    </div>
                     <div class="t-content">
                         <p class="quote">“She consistently brought fresh, strategic thinking to every project. Her
                             energy,
@@ -153,14 +223,14 @@
                             determined, but she also
                             has a knack for identifying marketing opportunities that drive real results.”</p>
                     </div>
-                    <div class="t-footer">
-                        <img src="/images/person2.jpg" alt="Client Photo" class="t-photo">
-                        <a href="https://linkedin.com/in/charlottehinrichs" target="_blank" rel="noopener"
-                            class="t-name">Charlotte Hinrichs</a>
-                    </div>
                 </div>
 
                 <div class="t-card">
+                    <div class="t-footer">
+                        <img src="/images/person3.jpg" alt="Client Photo" class="t-photo">
+                        <a href="https://www.linkedin.com/in/sylvash/" target="_blank" rel="noopener" class="t-name">Ashley
+                            Sylvin</a>
+                    </div>
                     <div class="t-content">
                         <p class="quote">“Marissa was hands-on in refining site campaigns and introducing smarter
                             lead-generation forms that strengthened our
@@ -172,15 +242,14 @@
                             standout
                             collaborator.”</p>
                     </div>
-                    <div class="t-footer">
-                        <img src="/images/person3.jpg" alt="Client Photo" class="t-photo">
-                        <a href="https://www.linkedin.com/in/sylvash/" target="_blank" rel="noopener"
-                            class="t-name">Ashley
-                            Sylvin</a>
-                    </div>
                 </div>
 
                 <div class="t-card">
+                    <div class="t-footer">
+                        <img src="/images/person4.jpg" alt="Client Photo" class="t-photo">
+                        <a href="https://www.linkedin.com/in/taylorlipscomb/" target="_blank" rel="noopener" class="t-name">Taylor
+                            Lipscomb</a>
+                    </div>
                     <div class="t-content">
                         <p class="quote">“Marissa's efforts had an impact on those performed by a professional who had
                             been in
@@ -190,14 +259,14 @@
                             strategies to elevate the
                             content we produced, and was the epitome of a team player and leader.”</p>
                     </div>
-                    <div class="t-footer">
-                        <img src="/images/person4.jpg" alt="Client Photo" class="t-photo">
-                        <a href="https://www.linkedin.com/in/taylorlipscomb/" target="_blank" rel="noopener"
-                            class="t-name">Taylor Lipscomb</a>
-                    </div>
                 </div>
 
                 <div class="t-card">
+                    <div class="t-footer">
+                        <img src="/images/person5.jpg" alt="Client Photo" class="t-photo">
+                        <a href="https://www.linkedin.com/in/julianaflorio/" target="_blank" rel="noopener" class="t-name">Juliana
+                            Florio</a>
+                    </div>
                     <div class="t-content">
                         <p class="quote">“What stands out most about Marissa is her balance of strong leadership and
                             genuine
@@ -206,44 +275,38 @@
                             project.”
                         </p>
                     </div>
-                    <div class="t-footer">
-                        <img src="/images/person5.jpg" alt="Client Photo" class="t-photo">
-                        <a href="https://www.linkedin.com/in/julianaflorio/" target="_blank" rel="noopener"
-                            class="t-name">Juliana Florio</a>
-                    </div>
                 </div>
 
                 <div class="t-card">
+                    <div class="t-footer">
+                        <img src="/images/person6.jpg" alt="Client Photo" class="t-photo">
+                        <a href="https://www.linkedin.com/in/tiffanymezzone/" target="_blank" rel="noopener" class="t-name">Tiffany
+                            Mezzone</a>
+                    </div>
                     <div class="t-content">
                         <p class="quote">“Marissa is an enthusiastic employee with strong skills to offer. She is a
                             great
                             addition to any team bringing positive
                             energy, ideas, and a strong work ethic.”</p>
                     </div>
-                    <div class="t-footer">
-                        <img src="/images/person6.jpg" alt="Client Photo" class="t-photo">
-                        <a href="https://www.linkedin.com/in/tiffanymezzone/" target="_blank" rel="noopener"
-                            class="t-name">Tiffany Mezzone</a>
-                    </div>
                 </div>
 
                 <div class="t-card">
+                    <div class="t-footer">
+                        <img src="/images/person7.jpg" alt="Client Photo" class="t-photo">
+                        <a href="https://www.linkedin.com/in/cynthia-m-b0a235112/" target="_blank" rel="noopener" class="t-name">Cynthia
+                            Mattick</a>
+                    </div>
                     <div class="t-content">
                         <p class="quote">“Marissa is a driven and hardworking individual, who works to ensure all
                             projects and
                             deadlines are met in a timely
                             manner. She is extremely thorough, and meticulous in her work.“</p>
                     </div>
-                    <div class="t-footer">
-                        <img src="/images/person7.jpg" alt="Client Photo" class="t-photo">
-                        <a href="https://www.linkedin.com/in/cynthia-m-b0a235112/" target="_blank" rel="noopener"
-                            class="t-name">Cynthia Mattick</a>
-                    </div>
                 </div>
-
             </div>
 
-            
+
 
         </div>
         <button class="t-arrow t-right" aria-label="Next">&#10095;</button>
@@ -316,12 +379,12 @@
 
                     <div class="field">
                         <label for="company">Company</label>
-                        <input id="company" name="company" type="text" required/>
+                        <input id="company" name="company" type="text" required />
                     </div>
 
                     <div class="field">
                         <label for="company">Job Title</label>
-                        <input id="company" name="company" type="text" required/>
+                        <input id="company" name="company" type="text" required />
                     </div>
 
                     <!--
