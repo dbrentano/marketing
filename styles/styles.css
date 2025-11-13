@@ -561,6 +561,14 @@
         }
 
         @media(max-width: 600px) {
+                .testimonial-carousel {
+                        padding-bottom: 50px;
+                    }
+            .t-track {
+                align-items: flex-start !important;
+                display: flex;
+                    scroll-snap-type: x mandatory;
+            }
             .t-card {
                 flex: 0 0 88%;
                 min-height: auto !important;
